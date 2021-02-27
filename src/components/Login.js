@@ -55,7 +55,6 @@ class Login extends Component {
 
   onChangePassword(e) {
     this.setState({ password: e.target.value, passwordError: "" });
-    console.log(e.target.value);
   }
 
   login() {
