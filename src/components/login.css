@@ -1,0 +1,33 @@
+.testClass {
+  color: red;
+}
+
+.App-header {
+  background-color: #85603f;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-text {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.showError {
+  color: red;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.loginName {
+  padding-top: 20px;
+}
+
+input {
+  margin-top: 15px;
+}
