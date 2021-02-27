@@ -30,3 +30,5 @@ const data = [
     id: 10,
   },
 ];
+
+export default data;

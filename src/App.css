@@ -1,7 +1,3 @@
-
-
-
-
 .App {
   text-align: center;
 }
@@ -17,26 +13,11 @@
   }
 }
 
-.App-header {
-  background-color: #85603f ;
-  min-height: 100vh;
-  flex-direction:column;
-  align-items:center;
-  justify-content: center;
-  text-align: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 .login {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.App-text{
-  padding-top: 50px;
-  text-align: center;
- 
-}
 .App-link {
   color: white;
 }
@@ -52,6 +33,6 @@
   }
 }
 
-.a:hover{
-  color:#bd9354
+.a:hover {
+  color: #bd9354;
 }

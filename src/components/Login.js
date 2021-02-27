@@ -7,6 +7,7 @@ class Login extends Component {
     password: "",
     emailError: "",
     passwordError: "",
+    value: "",
   };
 
   //email validation
@@ -57,13 +58,6 @@ class Login extends Component {
     console.log(e.target.value);
   }
 
-  //login
-  //   login() {
-  //     const emailFlag = this.isValidEmail(this.state.email);
-  //     if (emailFlag) {
-  //       alert("successful");
-  //     }
-  //   }
   login() {
     const emailFlag = this.isValidEmail(this.state.email);
     const passwordFlag = this.isValidPassword(this.state.password);
@@ -71,8 +65,21 @@ class Login extends Component {
       alert("successful");
     }
   }
+
+  //enable/disable button
+  enableButton() {
+    if (!this.state.email && !this.state.password) {
+      return true;
+    } else if (!this.state.email) {
+      return true;
+    } else if (!this.state.password) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   render() {
-    // console.log(this.state.email);
     return (
       <div>
         <div className="App-header" id="Login">
@@ -95,7 +102,7 @@ class Login extends Component {
           <button
             className="testClass"
             onClick={() => this.login()}
-            disabled={false}
+            disabled={this.enableButton()}
           >
             Login
           </button>
