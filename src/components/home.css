@@ -13,7 +13,13 @@ table {
   margin-left: 25px;
 }
 
-table thead {
+table thead tr th {
   font-size: 25px;
   background-color: green;
+  border: 2px solid #bd9354;
+}
+
+.deleteBtn {
+  font-size: 15px;
+  display: inline-block;
 }

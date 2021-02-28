@@ -23,6 +23,8 @@
 }
 .head {
   background-color: #bd9354;
+  position: fixed;
+  width: 100%;
 }
 @keyframes App-logo-spin {
   from {
