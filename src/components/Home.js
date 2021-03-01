@@ -8,6 +8,13 @@ class Home extends Component {
     list: data,
   };
 
+  deleteRow = (id) => {
+    // const delList = this.state.list;
+    const filteredList = this.state.list.filter((row) => row.id !== id);
+    // delList.splice(id, 1);
+    this.setState({ list: filteredList });
+  };
+
   render() {
     return (
       <div>
@@ -34,11 +41,7 @@ class Home extends Component {
                       <td>
                         <button
                           className="deleteBtn"
-                          onClick={(id) => {
-                            const delList = this.state.list;
-                            delList.splice(id, 1);
-                            this.setState({ list: delList });
-                          }}
+                          onClick={() => this.deleteRow(data.id)}
                         >
                           Delete
                         </button>
