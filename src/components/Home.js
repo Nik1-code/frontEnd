@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import data from "./RenderList";
+// import data from "./RenderList";
 
 import "./home.css";
 
 class Home extends Component {
   state = {
-    list: data,
+    list: [],
   };
 
   deleteRow = (id) => {
@@ -14,6 +14,15 @@ class Home extends Component {
     // delList.splice(id, 1);
     this.setState({ list: filteredList });
   };
+
+  //fetching data from an API
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ list: data });
+      });
+  }
 
   render() {
     return (
