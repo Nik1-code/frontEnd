@@ -7,16 +7,7 @@ class Home extends Component {
   state = {
     list: [],
     checked: false,
-  };
-
-  deleteRow = (checked) => {
-    // const delList = this.state.list;
-    const filteredList = this.state.list.filter(
-      (checked) => this.state.checked !== true,
-      console.log(this.state.checked)
-    );
-    // delList.splice(id, 1);
-    this.setState({ list: filteredList });
+    arrayOfCheckedRows: [],
   };
 
   //fetching data from an API
@@ -27,6 +18,29 @@ class Home extends Component {
         this.setState({ list: data });
       });
   }
+
+  onChangeCheckbox = (e, checkedRowId) => {
+    let updatedArray = [];
+    if (e.target.checked) {
+      updatedArray = [...this.state.arrayOfCheckedRows, checkedRowId];
+    } else {
+      updatedArray = this.state.arrayOfCheckedRows.filter(
+        (id) => id !== checkedRowId
+      );
+    }
+
+    this.setState({ arrayOfCheckedRows: updatedArray });
+  };
+
+  deleteRow = () => {
+    const { arrayOfCheckedRows, list } = this.state; // "Destructuring". Please study this
+    let newList = list;
+    arrayOfCheckedRows.forEach((id) => {
+      newList = newList.filter((item) => item.id !== id);
+    });
+
+    this.setState({ list: newList, arrayOfCheckedRows: [] });
+  };
 
   render() {
     return (
@@ -62,9 +76,7 @@ class Home extends Component {
                           type="checkbox"
                           name="checkbox"
                           value={this.state.checked}
-                          onChange={(checked) => {
-                            this.setState({ checked: true });
-                          }}
+                          onChange={(e) => this.onChangeCheckbox(e, data.id)}
                         ></input>
                       </td>
                     </tr>
