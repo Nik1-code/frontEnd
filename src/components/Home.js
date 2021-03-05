@@ -6,11 +6,15 @@ import "./home.css";
 class Home extends Component {
   state = {
     list: [],
+    checked: false,
   };
 
-  deleteRow = (id) => {
+  deleteRow = (checked) => {
     // const delList = this.state.list;
-    const filteredList = this.state.list.filter((row) => row.id !== id);
+    const filteredList = this.state.list.filter(
+      (checked) => this.state.checked !== true,
+      console.log(this.state.checked)
+    );
     // delList.splice(id, 1);
     this.setState({ list: filteredList });
   };
@@ -30,6 +34,12 @@ class Home extends Component {
         <div className="App-header" id="home">
           <h1 className="App-text">This is Home Page!</h1>
           <h2>Data</h2>
+          <button
+            className="deleteBtn"
+            onClick={(checked) => this.deleteRow(checked)}
+          >
+            Delete
+          </button>
           <h4>
             <table>
               <thead>
@@ -37,7 +47,7 @@ class Home extends Component {
                   <th>ID</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Action</th>
+                  <th>Check/uncheck </th>
                 </tr>
               </thead>
               <tbody>
@@ -48,12 +58,14 @@ class Home extends Component {
                       <td>{data.name}</td>
                       <td>{data.email}</td>
                       <td>
-                        <button
-                          className="deleteBtn"
-                          onClick={() => this.deleteRow(data.id)}
-                        >
-                          Delete
-                        </button>
+                        <input
+                          type="checkbox"
+                          name="checkbox"
+                          value={this.state.checked}
+                          onChange={(checked) => {
+                            this.setState({ checked: true });
+                          }}
+                        ></input>
                       </td>
                     </tr>
                   );
