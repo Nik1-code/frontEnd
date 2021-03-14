@@ -7,6 +7,9 @@ const Login = () => {
       <button>
         <Link to="/">Home</Link>
       </button>
+      <button>
+        <Link to="/Registration">Registration</Link>
+      </button>
       <h1>Login</h1>
     </div>
   );
