@@ -1,18 +1,28 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 //components
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Header from "./components/Header";
+// import Home from "./components/Home";
+// import Login from "./components/Login";
+// import Header from "./components/Header";
+import Home from "./reactRouter/Home";
+import Login from "./reactRouter/Login";
+import Registration from "./reactRouter/Registration";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Home />
-      <Login />
-    </>
+    <BrowserRouter>
+      <>
+        {/* <Header />
+        <Home />
+        <Login /> */}
+
+        <Route path="/" exact component={Home} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Registration" component={Registration} />
+      </>
+    </BrowserRouter>
   );
 }
 

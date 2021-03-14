@@ -16,17 +16,22 @@ class Home extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({ list: data });
+        // console.log(data);
       });
   }
 
   onChangeCheckbox = (e, checkedRowId) => {
+    console.log(e, checkedRowId);
     let updatedArray = [];
+    console.log(updatedArray);
     if (e.target.checked) {
       updatedArray = [...this.state.arrayOfCheckedRows, checkedRowId];
+      console.log(updatedArray);
     } else {
       updatedArray = this.state.arrayOfCheckedRows.filter(
         (id) => id !== checkedRowId
       );
+      console.log(updatedArray);
     }
 
     this.setState({ arrayOfCheckedRows: updatedArray });
@@ -35,11 +40,14 @@ class Home extends Component {
   deleteRow = () => {
     const { arrayOfCheckedRows, list } = this.state; // "Destructuring". Please study this
     let newList = list;
+    console.log(list);
     arrayOfCheckedRows.forEach((id) => {
       newList = newList.filter((item) => item.id !== id);
+      console.log(id);
     });
 
     this.setState({ list: newList, arrayOfCheckedRows: [] });
+    console.log(newList);
   };
 
   render() {
