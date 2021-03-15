@@ -1,16 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import "../App.css";
 
 const Login = () => {
+  const history = useHistory();
+  const goTo = () => history.push("/");
   return (
     <div>
-      <button>
-        <Link to="/">Home</Link>
-      </button>
-      <button>
-        <Link to="/Registration">Registration</Link>
-      </button>
+      <Link to="/Registration">Registration</Link>
+
       <h1>Login</h1>
+      <div>
+        <button className="home" onClick={goTo}>
+          Home
+        </button>
+      </div>
     </div>
   );
 };

@@ -4,12 +4,9 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
-      <button>
-        <Link to="/Login">Login</Link>
-      </button>
-      <button>
-        <Link to="/Registration">Registration</Link>
-      </button>
+      <Link to="/Login">Login</Link>
+
+      <Link to="/Registration">Registration</Link>
 
       <h1>Home</h1>
     </div>

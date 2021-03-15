@@ -13,7 +13,6 @@ class Login extends Component {
   //email validation
   submit() {}
   isValidEmail(email) {
-    console.log(email);
     if (email === "") {
       this.setState({ emailError: " Email cannot be empty" });
       return false;
