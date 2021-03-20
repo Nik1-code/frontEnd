@@ -10,8 +10,6 @@ import Home from "./reactRouter/Home";
 import Login from "./reactRouter/Login";
 import Registration from "./reactRouter/Registration";
 import Parent from "./ParentToChild/Parent";
-import One from "./ParentToChild/One";
-import Two from "./ParentToChild/Two";
 
 function App() {
   return (

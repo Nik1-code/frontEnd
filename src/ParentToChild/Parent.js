@@ -29,8 +29,7 @@ class Parent extends Component {
           }
         />
         <One showText={<button onClick={() => this.showText()}>show</button>} />
-
-        <Two state={this.state.showText} />
+        <Two state={this.state.showText ? this.state.text : null} />
       </>
     );
   }
