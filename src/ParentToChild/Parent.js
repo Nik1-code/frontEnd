@@ -7,14 +7,14 @@ class Parent extends Component {
     super(props);
     this.state = {
       text: "",
-      showText: false,
+      showText: "",
     };
   }
   onChangeText(e) {
     this.setState({ text: e.target.value });
   }
-  showText(showText) {
-    this.setState({ showText: true });
+  showText(text) {
+    this.setState({ showText: this.state.text });
   }
   render() {
     return (
@@ -27,9 +27,10 @@ class Parent extends Component {
               onChange={(event) => this.onChangeText(event)}
             />
           }
+          showText={<button onClick={() => this.showText()}>show</button>}
         />
-        <One showText={<button onClick={() => this.showText()}>show</button>} />
-        <Two state={this.state.showText ? this.state.text : null} />
+
+        <Two state={this.state.showText} />
       </>
     );
   }
