@@ -9,8 +9,6 @@ class Parent extends Component {
       text: "",
       showText: "",
     };
-    this.onChangeText = this.onChangeText.bind(this);
-    this.showText = this.showText.bind(this);
   }
   onChangeText(e) {
     this.setState({ text: e.target.value });
@@ -22,9 +20,9 @@ class Parent extends Component {
     return (
       <>
         <One
-          text={this.state.text}
-          onChange={this.onChangeText}
-          onClick={this.showText}
+          input={this.state.text}
+          onChange={(event) => this.onChangeText(event)}
+          onClick={() => this.showText()}
         />
         <Two state={this.state.showText} />
       </>
