@@ -5,7 +5,7 @@ const One = (props) => {
     <>
       <br />
       <br />
-      <input type="text" value={props.text} onChange={props.onChange} />
+      <input type="text" value={props.input} onChange={props.onChange} />
       <button onClick={props.onClick}>show</button>
     </>
   );
